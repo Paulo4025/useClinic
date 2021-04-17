@@ -7,6 +7,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import core.manager.pessoa.impl.PessoaManagerImpl;
+import core.model.dto.ConsultaPessoaNaturalRespostaDto;
+import core.model.dto.ConsultarPerfilPessoaNaturalDto;
 import core.model.dto.MensagemDto;
 import core.model.dto.PersonNaturalDto;
 
@@ -20,5 +22,14 @@ public class PessoaService {
 	public MensagemDto managerPersonNaturalUseClinic(PersonNaturalDto personNaturalDto)
 			throws ClassNotFoundException, Exception, NullPointerException {
 		return new PessoaManagerImpl().gerenciarPessoaNatural(personNaturalDto);
+	}
+	
+	@POST
+	@Path("/consultarPessoaNatural")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public ConsultaPessoaNaturalRespostaDto consultarPessoaNaturalPerfil(ConsultarPerfilPessoaNaturalDto consultarPerfilPessoaNaturalDto)
+			throws ClassNotFoundException, Exception, NullPointerException {
+		return new PessoaManagerImpl().consultarPessoaNaturalPerfil(consultarPerfilPessoaNaturalDto);
 	}
 }

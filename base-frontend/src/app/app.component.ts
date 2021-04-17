@@ -13,10 +13,6 @@ import "rxjs/add/operator/filter";
 import { DOCUMENT } from "@angular/common";
 import { Location } from "@angular/common";
 import { Configuration } from "configuration/ambient/configuration";
-import { Service } from "plugins/plugin-login/plugin-login-frontend/src/app/service/Service";
-import { ServiceConfig } from "plugins/plugin-login/plugin-login-frontend/src/app/service/ServiceConfig";
-import { ListaTipoEstadoDto } from "plugins/plugin-util-common/util-common-frontend/src/app/util-interface/ListaTipoEstadoDto";
-import { UtilService } from "plugins/plugin-util-common/util-common-frontend/src/app/util-service";
 
 var didScroll;
 var lastScrollTop = 0;
@@ -33,18 +29,16 @@ export class AppComponent implements OnInit {
   private _router: Subscription;
 
   constructor(
-    private service: Service,
     private renderer: Renderer2,
     private router: Router,
     @Inject(DOCUMENT) private document: any,
     private element: ElementRef,
     public location: Location,
-    private configuration: Configuration
+    private configuration: Configuration,
   ) {
     this.configuration.startConfigurationProjectFrontEnd(
       this.configuration.tipoAmbient.idAmbientTeste
-    );
-    
+    )
   }
 
   @HostListener("window:scroll", ["$event"])

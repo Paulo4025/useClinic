@@ -7,7 +7,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import core.model.dto.MensagemDto;
-import pluginlogin.manager.signUp.impl.SignUpManagerImpl;
+import pluginlogin.manager.signup.impl.SignUpManagerImpl;
 import pluginlogin.model.dto.SignUpFormDto;
 
 @Path("/cadastroService")

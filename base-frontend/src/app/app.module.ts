@@ -8,7 +8,7 @@ import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 import { SignupComponent } from "./../../plugins/plugin-login/plugin-login-frontend/src/app/signup/signup.component";
 import { LandingComponent } from "./landing/landing.component";
-import { ProfileComponent } from "./profile/profile.component";
+import { ProfileComponent } from "./../../plugins/plugin-core/plugin-core-frontend/src/app/profile/profile.component";
 import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { FooterComponent } from "./shared/footer/footer.component";
 
@@ -31,8 +31,24 @@ import { HttpClientModule } from "@angular/common/http";
 import { UtilLoader } from "plugins/plugin-util-common/util-common-frontend/src/app/util-loader/util-loader";
 import { UtilDefinicoes } from "plugins/plugin-util-common/util-common-frontend/src/app/util-definicoes";
 import { Service } from "plugins/plugin-login/plugin-login-frontend/src/app/service/Service";
-import { MatNativeDateModule } from "@angular/material/core";
+import { MatNativeDateModule, MAT_DATE_LOCALE } from "@angular/material/core";
 import { MatSelectModule } from "@angular/material/select";
+import { RecuperarSenhaComponent } from "plugins/plugin-login/plugin-login-frontend/src/app/recuperar-senha/recuperar-senha.component";
+import { PreRegistrarEmpresaComponent } from "plugins/plugin-util-common/util-common-frontend/src/app/modal/pre-registrar-empresa/pre-registrar-empresa/pre-registrar-empresa.component";
+import { MatCardModule } from "@angular/material/card";
+import { DadosAcessoUsuarioComponent } from "plugins/plugin-util-common/util-common-frontend/src/app/modal/dados-acesso-usuario/dados-acesso-usuario.component";
+import { MatExpansionModule } from "@angular/material/expansion";
+import { MatTableModule } from "@angular/material/table";
+import { ListaLojasProprietarioComponent } from "plugins/plugin-core/plugin-core-frontend/src/app/components/lista-lojas-proprietario/lista-lojas-proprietario.component";
+import { MatTabsModule } from "@angular/material/tabs";
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { ProfileEmpresaComponent } from "plugins/plugin-core/plugin-core-frontend/src/app/profile-empresa/profile-empresa.component";
+import { DadosEmpresaProfileComponent } from "plugins/plugin-core/plugin-core-frontend/src/app/profile-empresa/dados-empresa-profile/dados-empresa-profile.component";
+import { ListaFuncionarioEmpresaComponent } from "plugins/plugin-core/plugin-core-frontend/src/app/profile-empresa/lista-funcionario-empresa/lista-funcionario-empresa.component";
+import { PreRegistrarFuncionarioComponent } from "plugins/plugin-util-common/util-common-frontend/src/app/modal/pre-registrar-funcionario/pre-registrar-funcionario.component";
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,9 +58,18 @@ import { MatSelectModule } from "@angular/material/select";
     NavbarComponent,
     FooterComponent,
     LoginComponent,
+    RecuperarSenhaComponent,
     UtilLoader,
+    PreRegistrarEmpresaComponent,
+    DadosAcessoUsuarioComponent,
+    ListaLojasProprietarioComponent,
+    ProfileEmpresaComponent,
+    DadosEmpresaProfileComponent,
+    ListaFuncionarioEmpresaComponent,
+    PreRegistrarFuncionarioComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     MatSelectModule,
     MatNativeDateModule,
     MatDatepickerModule,
@@ -62,7 +87,13 @@ import { MatSelectModule } from "@angular/material/select";
     HomeModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatTableModule,
+    MatTabsModule,
+    MatPaginatorModule,MatCheckboxModule,MatDividerModule,MatListModule
   ],
+  entryComponents: [PreRegistrarEmpresaComponent, DadosAcessoUsuarioComponent],
   providers: [
     UtilConstant,
     UtilFuncoes,
@@ -72,6 +103,7 @@ import { MatSelectModule } from "@angular/material/select";
     UtilDefinicoes,
     UtilLoader,
     Service,
+    { provide: MAT_DATE_LOCALE, useValue: "pt-BR" },
   ],
   bootstrap: [AppComponent],
 })

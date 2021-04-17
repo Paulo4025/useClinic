@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="84" height="24" viewBox="0 0 84 24">
+  <defs>
+    <clipPath id="clip-succint-name">
+      <rect width="84" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="succint-name" clip-path="url(#clip-succint-name)">
+    <text id="SUCCINT" transform="translate(9)" fill="#fff" font-size="16" font-family="Candara" letter-spacing="0.05em"><tspan x="0.584" y="15">SUCCINT</tspan></text>
+    <text id="Fashion_marketplace" data-name="Fashion marketplace" transform="translate(10 22)" fill="#fff" font-size="5" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Fashion marketplace</tspan></text>
+  </g>
+</svg>

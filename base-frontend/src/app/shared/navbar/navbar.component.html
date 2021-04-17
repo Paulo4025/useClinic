@@ -4,7 +4,7 @@
 >
   <div class="container">
     <a class="navbar-brand mr-lg-5" [routerLink]="['/home']">
-      <img src="./assets/img/brand/logo-use-clinic.png" />
+      <img src="./assets/img/brand/succint-name.svg" />
     </a>
     <button
       class="navbar-toggler"
@@ -43,10 +43,10 @@
       </div>
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
         <li class="nav-item dropdown">
-          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+          <!--<a class="nav-link no-caret" data-toggle="dropdown" role="button">
             <i class="ni ni-ui-04 d-lg-none"></i>
             <span class="nav-link-inner--text">Sobre nós</span>
-          </a>
+          </a>-->
           <div class="dropdown-menu-xl dropdown-menu">
             <div class="dropdown-menu-inner">
               <a
@@ -60,12 +60,9 @@
                   <span class="material-icons"> calendar_today </span>
                 </div>
                 <div class="media-body ml-3">
-                  <h6 class="heading text-primary mb-md-1">Agendamento</h6>
+                  <h6 class="heading text-primary mb-md-1">Loja online</h6>
                   <p class="description d-none d-md-inline-block mb-0">
-                    Controle os encaixes das consultas e exames, bloqueie os
-                    horários das agendas médicas, controle o retorno do
-                    paciente, distribua os agendamentos de acordo com a taxa de
-                    ocupação da agenda, receba avisos e lembretes.
+                    Itens de acordo com o seu estilo.
                   </p>
                 </div>
               </a>
@@ -81,11 +78,10 @@
                 </div>
                 <div class="media-body ml-3">
                   <h6 class="heading text-primary mb-md-1">
-                    Controle Financeiro
+                    Marketplace
                   </h6>
                   <p class="description d-none d-md-inline-block mb-0">
-                    Contas a pagar, a receber, centros de custos, conciliação
-                    Bancária, repasse médico, entre outros…
+                    Realize vendas através da nossa solução
                   </p>
                 </div>
               </a>
@@ -155,17 +151,17 @@
           *ngIf="!this.utilFuncoes.verificarSessaoUsuario()"
         >
           <a href="#/login" class="btn btn-neutral btn-icon">
-            <span class="nav-link-inner--text">Entrar</span>
+            <span class="nav-link-inner--text">iniciar sessão</span>
           </a>
         </li>
-        <li
+        <!--<li
           class="nav-item d-none d-lg-block ml-lg-4"
           *ngIf="!this.utilFuncoes.verificarSessaoUsuario()"
         >
           <a href="#/register" class="btn btn-neutral btn-icon">
             <span class="nav-link-inner--text">Criar conta</span>
           </a>
-        </li>
+        </li>-->
         <li
           class="nav-item d-none d-lg-block ml-lg-4"
           *ngIf="this.utilFuncoes.verificarSessaoUsuario()"
