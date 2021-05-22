@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router, NavigationEnd, NavigationStart } from "@angular/router";
 import { Location, PopStateEvent } from "@angular/common";
-import { Funcoes } from "plugins/plugin-common/plugin-common-frontend/src/app/funcoes";
+import { UtilFuncoes } from "plugins/plugin-common/plugin-common-frontend/src/app/util-funcoes";
 
 @Component({
   selector: "app-navbar",
@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   constructor(
     public location: Location,
     private router: Router,
-    private funcoes: Funcoes
+    private utilFuncoes: UtilFuncoes
   ) {}
 
   ngOnInit() {
@@ -38,8 +38,8 @@ export class NavbarComponent implements OnInit {
   }
 
   finalizarSessaoUsuario() {
-    return this.funcoes.finalizarSesssaoUsuario() === true
-      ? this.funcoes.routerRedirect("/login")
+    return this.utilFuncoes.finalizarSesssaoUsuario() === true
+      ? this.utilFuncoes.routerRedirect("/login")
       : null;
   }
 

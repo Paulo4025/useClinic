@@ -16,8 +16,31 @@ public class EnderecoService {
 	@Path("/gerenciarEnderecoPessoaNatural")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public MensagemDto gerenciarEnderecoPessoaNatural(EnderecoDto enderecoDto)
-			throws ClassNotFoundException, Exception, NullPointerException {
+	public MensagemDto gerenciarEnderecoPessoaNatural(EnderecoDto enderecoDto) {
 		return new EnderecoManagerImpl().inserirEndereco(enderecoDto);
+	}
+
+	@POST
+	@Path("/inserirEnderecoEmpresa")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public MensagemDto gerenciarEnderecoEmpresa(EnderecoDto enderecoDto) {
+		return new EnderecoManagerImpl().inserirEnderecoEmpresa(enderecoDto);
+	}
+	
+	@POST
+	@Path("/alterarEnderecoEmpresa")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public MensagemDto alterarEnderecoEmpresa(EnderecoDto enderecoDto) {
+		return new EnderecoManagerImpl().alterarEnderecoEmpresa(enderecoDto);
+	}
+	
+	@POST
+	@Path("/excluirEndereco")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public MensagemDto excluirEndereco(EnderecoDto enderecoDto) {
+		return new EnderecoManagerImpl().excluirEndereco(enderecoDto);
 	}
 }

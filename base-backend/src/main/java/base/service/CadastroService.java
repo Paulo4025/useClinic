@@ -17,8 +17,7 @@ public class CadastroService {
 	@Path("/cadastroBasico")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public MensagemDto signUpFormBasic(SignUpFormDto signUpFormDto)
-			throws ClassNotFoundException, Exception, NullPointerException {
+	public MensagemDto signUpFormBasic(SignUpFormDto signUpFormDto) {
 		return new SignUpManagerImpl().realizarCadastroBasico(signUpFormDto);
 	}
 

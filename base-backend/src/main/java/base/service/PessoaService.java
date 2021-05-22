@@ -19,17 +19,16 @@ public class PessoaService {
 	@Path("/gerenciarPessoaNatural")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public MensagemDto managerPersonNaturalUseClinic(PersonNaturalDto personNaturalDto)
-			throws ClassNotFoundException, Exception, NullPointerException {
+	public MensagemDto managerPersonNaturalUseClinic(PersonNaturalDto personNaturalDto) {
 		return new PessoaManagerImpl().gerenciarPessoaNatural(personNaturalDto);
 	}
-	
+
 	@POST
 	@Path("/consultarPessoaNatural")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public ConsultaPessoaNaturalRespostaDto consultarPessoaNaturalPerfil(ConsultarPerfilPessoaNaturalDto consultarPerfilPessoaNaturalDto)
-			throws ClassNotFoundException, Exception, NullPointerException {
+	public ConsultaPessoaNaturalRespostaDto consultarPessoaNaturalPerfil(
+			ConsultarPerfilPessoaNaturalDto consultarPerfilPessoaNaturalDto) {
 		return new PessoaManagerImpl().consultarPessoaNaturalPerfil(consultarPerfilPessoaNaturalDto);
 	}
 }

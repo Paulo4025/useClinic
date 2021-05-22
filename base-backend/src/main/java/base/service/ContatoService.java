@@ -10,7 +10,9 @@ import javax.ws.rs.core.MediaType;
 
 import core.manager.contato.impl.ContatoManagerImpl;
 import core.model.dto.InserirContatoDto;
+import core.model.dto.InserirContatoEmpresaDto;
 import core.model.dto.MensagemDto;
+import core.model.entity.ExcluirContatoDto;
 
 @Path("/contatoService")
 public class ContatoService {
@@ -18,8 +20,32 @@ public class ContatoService {
 	@Path("/gerenciarContatoPessoa")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<MensagemDto> gerenciarContatoPessoa(InserirContatoDto contactDto)
-			throws ClassNotFoundException, Exception, NullPointerException {
-		return new ContatoManagerImpl().gerenciarContatoPessoa(contactDto);
+	public List<MensagemDto> gerenciarContatoPessoa(InserirContatoDto contactDto) {
+		return new ContatoManagerImpl().inserirContato(contactDto);
 	}
+
+	@POST
+	@Path("/inserirContatoEmpresa")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public MensagemDto inserirContatoEmpresa(InserirContatoEmpresaDto inserirContatoEmpresaDto) {
+		return new ContatoManagerImpl().inserirContatoEmpresa(inserirContatoEmpresaDto);
+	}
+
+	@POST
+	@Path("/alterarContatoEmpresa")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public MensagemDto alterarContatoEmpresa(InserirContatoEmpresaDto inserirContatoEmpresaDto) {
+		return new ContatoManagerImpl().alterarContatoEmpresa(inserirContatoEmpresaDto);
+	}
+
+	@POST
+	@Path("/excluirContato")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public MensagemDto excluirContato(ExcluirContatoDto excluirContatoDto) {
+		return new ContatoManagerImpl().excluirContato(excluirContatoDto);
+	}
+
 }

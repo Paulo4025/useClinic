@@ -19,8 +19,7 @@ public class EmpresaService {
 	@Path("/preRegistrarEmpresa")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public MensagemDto preRegistrarEmpresa(PreRegistroEmpresaDto preRegistroEmpresaDto)
-			throws ClassNotFoundException, Exception, NullPointerException {
+	public MensagemDto preRegistrarEmpresa(PreRegistroEmpresaDto preRegistroEmpresaDto) {
 		return new EmpresaManagerImpl().preRegistrarEmpresa(preRegistroEmpresaDto);
 	}
 
@@ -28,8 +27,8 @@ public class EmpresaService {
 	@Path("/consultarPerfilEmpresa")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public PerfilEmpresaDto consultarPerfilEmpresa(ConsultarEmpresaDto consultarEmpresaDto)
-			throws ClassNotFoundException, Exception, NullPointerException {
+	public PerfilEmpresaDto consultarPerfilEmpresa(ConsultarEmpresaDto consultarEmpresaDto) {
 		return new EmpresaManagerImpl().consultarPerfilEmpresa(consultarEmpresaDto);
 	}
+
 }

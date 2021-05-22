@@ -19,8 +19,7 @@ public class UserService {
 	@Path("/consultarInformacoesUsuario")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public UserResponseDto consultUserData(UserDto userDto)
-			throws ClassNotFoundException, Exception, NullPointerException {
+	public UserResponseDto consultUserData(UserDto userDto) {
 		return new UsuarioManagerImpl().consultarInformacoesUsuarioPessoaNatural(userDto);
 	}
 
@@ -28,8 +27,7 @@ public class UserService {
 	@Path("/recuperarSenhaUsuario")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public MensagemDto recuperarSenhaUsuario(UserDto userDto)
-			throws ClassNotFoundException, Exception, NullPointerException {
+	public MensagemDto recuperarSenhaUsuario(UserDto userDto) {
 		return new UsuarioManagerImpl().recuperarSenhaUsuario(userDto);
 	}
 
@@ -37,8 +35,7 @@ public class UserService {
 	@Path("/alterarDadosUsuario")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public MensagemDto alterarDadosUsuario(AlterarUsuarioDto alterarUsuarioDto)
-			throws ClassNotFoundException, Exception, NullPointerException {
+	public MensagemDto alterarDadosUsuario(AlterarUsuarioDto alterarUsuarioDto) {
 		return new UsuarioManagerImpl().alterarDadosUsuario(alterarUsuarioDto);
 	}
 
